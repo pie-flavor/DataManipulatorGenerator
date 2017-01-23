@@ -28,7 +28,7 @@ public class DataManipulatorGenerator {
                 chooser.addChoosableFileFilter(new FileFilter() {
                     @Override
                     public boolean accept(File f) {
-                        return f.getName().endsWith(".conf");
+                        return f.isDirectory() || f.getName().endsWith(".conf");
                     }
 
                     @Override
