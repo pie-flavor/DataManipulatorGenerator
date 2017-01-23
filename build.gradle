@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '1.2.4'
+}
+
+group 'flavor.pie'
+version '1.0.0'
+
+repositories {
+    mavenCentral()
+}
+
+build.dependsOn shadowJar
+jar.enabled = false
+
+dependencies {
+    compile 'ninja.leaping.configurate:configurate-hocon:3.2'
+}
+
+shadowJar {
+    classifier = null
+}
+
+mainClassName = 'flavor.pie.generator.data.DataManipulatorGenerator'
