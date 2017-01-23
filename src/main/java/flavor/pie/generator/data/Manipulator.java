@@ -27,7 +27,7 @@ public class Manipulator {
     public static class ManipulatorField {
         @Setting
         String type;
-        @Setting
+        @Setting("full-type")
         String fullType;
         @Setting("transient")
         boolean isTransient = false;
