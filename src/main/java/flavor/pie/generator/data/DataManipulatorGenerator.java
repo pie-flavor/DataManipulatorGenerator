@@ -36,6 +36,18 @@ public class DataManipulatorGenerator {
                         return "HOCON configuration files (*.conf)";
                     }
                 });
+                chooser.setAcceptAllFileFilterUsed(false);
+                chooser.addChoosableFileFilter(new FileFilter() {
+                    @Override
+                    public boolean accept(File f) {
+                        return true;
+                    }
+
+                    @Override
+                    public String getDescription() {
+                        return "All files (*.*)";
+                    }
+                });
                 chooser.setMultiSelectionEnabled(true);
                 chooser.showOpenDialog(null);
                 Arrays.stream(chooser.getSelectedFiles()).forEach(DataManipulatorGenerator::generate);
