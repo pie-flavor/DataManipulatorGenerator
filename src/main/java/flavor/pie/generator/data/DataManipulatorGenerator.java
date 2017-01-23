@@ -522,8 +522,8 @@ public class DataManipulatorGenerator {
             //field getters
             manipulator.fields.forEach(f -> {
                 //getter
-                writer.printf("%spublic %s %s%s() {%s", t1, f.optional ? String.format("Optional<%s>", f.boxedType) : f.fullType, f.type.equals("Z") ? "is" : "get", f.uppercase, n);
-                writer.printf("%sreturn %s;%s", t2, f.optional ? String.format("Optional.ofNullable(%s)", f.name) : f.name, n);
+                writer.printf("%spublic %s %s%s() {%s", t2, f.optional ? String.format("Optional<%s>", f.boxedType) : f.fullType, f.type.equals("Z") ? "is" : "get", f.uppercase, n);
+                writer.printf("%sreturn %s;%s", t3, f.optional ? String.format("Optional.ofNullable(%s)", f.name) : f.name, n);
                 writer.printf("%s}%s%2$s", t2, n);
                 //value
                 writer.printf("%spublic Immutable%s %s() {%s", t2, f.valueName, f.name, n);
